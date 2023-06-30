@@ -19,6 +19,8 @@
 
 .search-input {
     padding: 8px 4px;
+    border: 1px solid #4788C7;
+    border-radius: 4px;
 }
 
 .input {
@@ -26,17 +28,31 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin: 8px 0;
+
 }
 
 #input-container {
     padding: 8px 180px 8px 4px;
+    border: 1px solid #4788C7;
+    border-radius: 4px;
 }
 
 .button {
-    background-color: blue;
-    color: white;
-    border: 1px solid blue;
+    background-color: #B6DCFE;
+    color: #4788C7;
+    border: 1px solid #4788C7;
     padding: 4px 12px;
     border-radius: 4px;
     font-weight: bold;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.titles-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
