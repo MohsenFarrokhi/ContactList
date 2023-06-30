@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
 
-
   return (
-    <div>
-
+    <div className="container">
+        <div className="search">
+      <input className="search-input" placeholder='Search...'/>
+        </div>
+        <div className="input">
+            <input id="input-container" placeholder="Name" type="text"/>
+            <input id="input-container" placeholder="Phone" type="number"/>
+            <input id="input-container" placeholder="Email" type="email"/>
+            <button className="button">+Add</button>
+        </div>
     </div>
   )
 }
