@@ -41,7 +41,10 @@ function App() {
 
         <div className="container">
 
-            <h1 className="header">Contact List</h1>
+            <h1 className="header">
+                <img style={{marginRight:4}} src="../public/icons8-list-48.png" alt="list"/>
+                Contact List
+            </h1>
 
             <Form
                 submitFormHandler={submitFormHandler}
