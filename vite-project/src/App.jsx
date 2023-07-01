@@ -9,13 +9,11 @@ function App() {
     const [emails, setEmails] = useState('');
     const [persons, setPersons] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    // const [searchNumbers, setSearchNumbers] = useState('');
-    // const [searchEmails, setSearchEmails] = useState('');
+
     const emailChangeHandler = (e) => {
         setEmails(e.target.value);
         console.log(e.target.value)
     }
-
     const numberChangeHandler = (e) => {
         setNumbers(e.target.value);
         console.log(e.target.value)
@@ -40,8 +38,11 @@ function App() {
     }
 
     return (
+
         <div className="container">
+
             <h1 className="header">Contact List</h1>
+
             <Form
                 submitFormHandler={submitFormHandler}
                 nameChangeHandler={nameChangeHandler}
@@ -53,7 +54,9 @@ function App() {
                 numbers={numbers}
                 emails={emails}
             />
+
             <hr style={{borderColor: "#B6DCFE", marginLeft: 70, marginRight: 70}}/>
+
             <div className="titles">
                     <span className="titles-container">
                         Name<img src="../public/icons8-name-40.png" alt="name-icon"/>
@@ -65,7 +68,9 @@ function App() {
                         Email<img src="../public/icons8-email-40.png" alt="email-icon"/>
                     </span>
             </div>
+
             <hr style={{borderColor: "#B6DCFE", marginLeft: 70, marginRight: 70, marginBottom: 2}}/>
+
             <InputList
                 searchTerm={searchTerm}
                 persons={persons}
