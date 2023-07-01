@@ -25,19 +25,20 @@ const InputItem = ({name, id, number, email, searchTerm}) => {
             </div>
             <div className="list-item">
                 {index === -1 ? (
-                        <p>{number}</p>
-                    ) : (
-                        <p>
-                            <span>
-                                {number.slice(0, index)}
-                            </span>
-                            <span
-                                style={{backgroundColor: "yellow"}}>{number.slice(index, index + searchTerm.length)}</span>
-                            <span>
-                                {number.slice(index + searchTerm.length)}
-                            </span>
-                        </p>
-                    )}
+                    <p>{number}</p>
+                ) : (
+                    <p>
+                        <span>
+                            {number.slice(0, index)}
+                        </span>
+                        <span
+                            style={{backgroundColor: "yellow"}}>{number.slice(index, index + searchTerm.length)}
+                        </span>
+                        <span>
+                            {number.slice(index + searchTerm.length)}
+                        </span>
+                    </p>
+                )}
             </div>
             <div className="list-item">
                 {index === -1 ? (
