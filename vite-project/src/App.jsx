@@ -1,5 +1,7 @@
 import './App.css'
 import React, {useState} from "react";
+import Form from "./components/Form.jsx";
+import InputList from "./components/InputList.jsx";
 
 function App() {
     const [names, setNames] = useState('');
@@ -40,18 +42,17 @@ function App() {
     return (
         <div className="container">
             <h1 className="header">Contact List</h1>
-            <form onSubmit={submitFormHandler}>
-                <div className="search">
-                    <input className="search-input" placeholder='Search...' value={searchTerm}
-                           onChange={searchHandler}/>
-                </div>
-                <div className="input">
-                    <input id="input-container" placeholder="Name" value={names} onChange={nameChangeHandler}/>
-                    <input id="input-container" placeholder="Phone" value={numbers} onChange={numberChangeHandler}/>
-                    <input id="input-container" placeholder="Email" value={emails} onChange={emailChangeHandler}/>
-                    <button className="button" type='submit'>+Add</button>
-                </div>
-            </form>
+            <Form
+                submitFormHandler={submitFormHandler}
+                nameChangeHandler={nameChangeHandler}
+                searchHandler={searchHandler}
+                numberChangeHandler={numberChangeHandler}
+                emailChangeHandler={emailChangeHandler}
+                searchTerm={searchTerm}
+                names={names}
+                numbers={numbers}
+                emails={emails}
+            />
             <hr style={{borderColor: "#B6DCFE", marginLeft: 70, marginRight: 70}}/>
             <div className="titles">
                     <span className="titles-container">
@@ -64,30 +65,11 @@ function App() {
                         Email<img src="../public/icons8-email-40.png" alt="email-icon"/>
                     </span>
             </div>
-            <hr style={{borderColor: "#B6DCFE", marginLeft: 70, marginRight: 70,marginBottom:2}}/>
-            <div>
-                {persons
-                    .filter(
-                        ({name, number, email}) =>
-                            name.includes(searchTerm) ||
-                            number.includes(searchTerm) ||
-                            email.includes(searchTerm)
-                    )
-                    .map(({id, name, number, email}) => (
-                        <div className="list-container">
-                            <div className="list-item" key={id}>
-                                {name}
-                            </div>
-                                <div className="list-item" key={id}>
-                                    {number}
-                                </div>
-                                <div className="list-item" key={id}>
-                                    {email}
-                                </div>
-                        </div>
-                    ))}
-                <hr style={{borderColor: "#B6DCFE", marginLeft: 70, marginRight: 70, marginBottom:2}}/>
-            </div>
+            <hr style={{borderColor: "#B6DCFE", marginLeft: 70, marginRight: 70, marginBottom: 2}}/>
+            <InputList
+                searchTerm={searchTerm}
+                persons={persons}
+            />
         </div>
     )
 }
